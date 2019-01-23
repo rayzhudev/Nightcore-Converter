@@ -10,7 +10,7 @@ try:
             audio = AudioFileClip(filename)
             nightcore_audio = audio.fx(vfx.speedx, math.sqrt(2))
             nightcore_audio.write_audiofile("../nightcored songs/" + filename)
-        os.remove(filename)
+        os.remove(filename) #comment out this line to not delete the file after converting
 except Exception as e:
     print(e)
     exit
