@@ -1,6 +1,6 @@
-import sys, os, librosa, math
+import sys, os, librosa, math, eyed3
 from moviepy.editor import *
-# from moviepy.audio import *
+
 folder = sys.argv[1]
 try: 
     os.chdir(folder)
@@ -10,7 +10,13 @@ try:
             audio = AudioFileClip(filename)
             nightcore_audio = audio.fx(vfx.speedx, math.sqrt(2))
             nightcore_audio.write_audiofile("../nightcored songs/" + filename)
-        os.remove(filename) #comment out this line to not delete the file after converting
+            song = eyed3.load("../nightcored songs/" + filename)
+            song.tag.artist = filename.split(" - ")[0]
+            song.tag.title = filename.split(" - ")[1][:-4]
+            song.tag.album_artist = song.tag.artist
+            song.tag.save()
+        elif filename.endswith(".mp3"):
+            os.remove(filename) #comment out this section to not delete the file after converting
 except Exception as e:
     print(e)
     exit
