@@ -2,9 +2,9 @@
 Nightcore converter is a python script used to convert mp3 files to nightcore.
 
 ### Usage
-1. Locate the directory containing the songs you wish to convert. e.g. `music/`
-2. Create a folder named `nightcored songs/`. This is where the converted songs will go. 
-3. Run the command `python3 nightcoreconverter.py music/`. This will convert every mp3 file in this folder to nightcore and then proceed to delete the original mp3 after doing so. If you wish to keep the mp3 file, comment out the line of code indicated in nightcoreconverter.py. 
+1. Places your mp3 files in the `input/` folder.
+1.a (Optional) Rename each mp3 file such that the name follows the structure `{Artist} - {Song Title}.mp3`. e.g. `Linkin Park - Numb.mp3`. This is so that the mp3 metadata can be recorded so you can sort by artist name and title.
+2. Run the command `python3 nightcoreconverter.py input/`. Or alternatively run the nightcore.command script [FOR MAC USERS ONLY]. This will convert every mp3 file in the input folder to nightcore and then proceed to delete the original mp3 after doing so. If you wish to keep the mp3 file, comment out the line of code indicated in nightcoreconverter.py. 
 4. Enjoy!
 
 ### Notes
